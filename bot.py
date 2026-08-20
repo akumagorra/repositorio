@@ -1,18 +1,15 @@
 
 from settings import settings
 import discord
-# import * - es una forma rápida de importar todos los archivos de la biblioteca
-from bot_logic import *
 
-# La variable intents almacena los privilegios del bot
+from bot_logic import *
 intents = discord.Intents.default()
-# Activar el privilegio de lectura de mensajes
+
 intents.message_content = True
-# Crear un bot en la variable cliente y transferirle los privilegios
+
 client = discord.Client(intents=intents)
 
 
-# Una vez que el bot esté listo, ¡imprimirá su nombre!
 @client.event
 async def on_ready():
     print(f'We have logged in as {client.user}')
